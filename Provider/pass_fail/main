@@ -1,0 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_basics/check_provider.dart';
+import 'package:provider_basics/home_screen01.dart';
+
+main() {
+  runApp(
+    // Place the provider at a high level
+    ChangeNotifierProvider<CheckProvider>(
+      create: (context) => CheckProvider(),
+      child: const MaterialApp(
+        home: HomeScreen01(),
+      ),
+    ),
+  );
+}
