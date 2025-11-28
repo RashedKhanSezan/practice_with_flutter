@@ -13,9 +13,13 @@ class HomeScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('My To-Do List ($taskCount tasks)'),
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
+        title: Consumer<TodoProvider>(
+          builder: (context, aprovider, child) {
+            return Text('My To-Do Task ${aprovider.allTasks.length}');
+          },
+        ),
       ),
       body: const TodoList(),
       floatingActionButton: FloatingActionButton(
